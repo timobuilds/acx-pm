@@ -1,0 +1,29 @@
+{
+  "name": "acx-plugins",
+  "owner": {
+    "name": "ACX PM Team",
+    "email": "timo@buildwonder.co"
+  },
+  "metadata": {
+    "description": "Cursor plugins for the ACX product management team"
+  },
+  "plugins": [
+    {
+      "name": "acx-pm",
+      "source": "./acx-pm",
+      "version": "0.2.0",
+      "description": "Shared PM workflows: meeting prep, customer insight, strategic writing, and Jira/roadmap execution. Integrates with Slack, Atlassian, Airtable, Miro, and Figma MCPs.",
+      "category": "productivity",
+      "keywords": [
+        "product-management",
+        "acx",
+        "slack",
+        "jira",
+        "confluence",
+        "airtable",
+        "miro",
+        "figma"
+      ]
+    }
+  ]
+}
