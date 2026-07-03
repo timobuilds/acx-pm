@@ -8,7 +8,14 @@ When you ship a release, bump `version` in:
 
 - `acx-pm/.cursor-plugin/plugin.json`
 - `acx-pm/.claude-plugin/plugin.json`
-- `.cursor-plugin/marketplace.json` (plugin entry)
+
+Version lives in the per-plugin manifests only — the marketplace listing schema does not accept `version`, `category`, or `keywords` on plugin entries.
+
+## [0.2.1] - 2026-07-03
+
+### Fixed
+
+- **`.cursor-plugin/marketplace.json`** — removed `version`, `category`, and `keywords` from the plugin entry (not allowed by the marketplace listing schema; blocked Dashboard import)
 
 ## [0.2.0] - 2026-07-03
 

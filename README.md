@@ -7,13 +7,14 @@ Private plugin marketplace for the ACX product management team. Import this repo
 Requires Cursor **Teams** or **Enterprise** with admin access.
 
 1. Push this repo to GitHub (`https://github.com/timobuilds/acx-pm`).
-2. Open **[Cursor Dashboard](https://cursor.com/dashboard) → Settings → Plugins**.
-3. Under **Team Marketplaces**, click **Import Marketplace**.
-4. Paste the repo URL and continue. Cursor parses `.cursor-plugin/marketplace.json` and lists available plugins.
-5. Set distribution for **acx-pm** (Default Off, Default On, or Required) and save.
-6. Optional: enable **Auto Refresh** so pushes re-index plugins without manual re-import.
-
-For GitHub Enterprise, register the Cursor GitHub App under Dashboard → Integrations and grant it access to this repo.
+2. **Private repo?** Register the **Cursor GitHub App** under **[Dashboard → Integrations](https://cursor.com/dashboard?tab=integrations)** and grant it access to this repo — otherwise import cannot read `.cursor-plugin/marketplace.json`.
+3. Open **[Dashboard → Settings → Plugins](https://cursor.com/dashboard)** → **Team Marketplaces** → **Import Marketplace**.
+4. Paste `https://github.com/timobuilds/acx-pm` and continue. Cursor parses the manifest and lists **acx-pm**.
+5. Set distribution for **acx-pm**:
+   - **Default Off** — teammates opt in via Customize (recommended until battle-tested)
+   - **Default On** — auto-installed, can opt out
+   - **Required** — auto-installed, cannot uninstall
+6. Enable **Auto Refresh** so pushes to `main` re-index the marketplace without manual re-import.
 
 ## For PMs — install the plugin
 
@@ -32,7 +33,7 @@ See [`acx-pm/README.md`](acx-pm/README.md) for skill list, MCP requirements, and
 .cursor-plugin/marketplace.json   ← team marketplace manifest (import this repo)
 CHANGELOG.md
 acx-pm/                           ← acx-pm plugin
-  .cursor-plugin/plugin.json
+  .cursor-plugin/plugin.json      ← version lives here
   .claude-plugin/plugin.json
   skills/
   CONVENTIONS.md
@@ -43,6 +44,8 @@ acx-pm/                           ← acx-pm plugin
 
 On release:
 
-1. Bump `version` in `acx-pm/.cursor-plugin/plugin.json`, `acx-pm/.claude-plugin/plugin.json`, and the `acx-pm` entry in `.cursor-plugin/marketplace.json`
+1. Bump `version` in `acx-pm/.cursor-plugin/plugin.json` and `acx-pm/.claude-plugin/plugin.json`
 2. Add a dated section to `CHANGELOG.md`
 3. Push to `main` (auto-refresh picks it up if enabled)
+
+Do **not** add `version`, `category`, or `keywords` to plugin entries in `.cursor-plugin/marketplace.json` — the listing schema rejects them. Category and keywords belong in each plugin's own `plugin.json`.

@@ -11,19 +11,7 @@
     {
       "name": "acx-pm",
       "source": "./acx-pm",
-      "version": "0.2.0",
-      "description": "Shared PM workflows: meeting prep, customer insight, strategic writing, and Jira/roadmap execution. Integrates with Slack, Atlassian, Airtable, Miro, and Figma MCPs.",
-      "category": "productivity",
-      "keywords": [
-        "product-management",
-        "acx",
-        "slack",
-        "jira",
-        "confluence",
-        "airtable",
-        "miro",
-        "figma"
-      ]
+      "description": "Shared PM workflows: meeting prep, customer insight, strategic writing, and Jira/roadmap execution. Integrates with Slack, Atlassian, Airtable, Miro, and Figma MCPs."
     }
   ]
 }

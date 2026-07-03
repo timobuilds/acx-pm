@@ -11,7 +11,7 @@ One directory, two manifests:
 | **Cursor** (primary) | `.cursor-plugin/plugin.json` | ACX team marketplace (see Installing) |
 | **Claude Code / Cowork** | `.claude-plugin/plugin.json` | Claude plugin install flow |
 
-Skills live in `skills/*/SKILL.md` — a cross-agent format both clients read. No duplicated skill content. On release, bump `version` in both plugin manifests **and** the `acx-pm` entry in the root `.cursor-plugin/marketplace.json` (see root `CHANGELOG.md`).
+Skills live in `skills/*/SKILL.md` — a cross-agent format both clients read. No duplicated skill content. On release, bump `version` in both plugin manifests (see root `CHANGELOG.md`). Version does not go in the marketplace listing — only in `acx-pm/.cursor-plugin/plugin.json` and `acx-pm/.claude-plugin/plugin.json`.
 
 ## Requirements
 
