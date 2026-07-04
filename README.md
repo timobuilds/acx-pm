@@ -18,6 +18,8 @@ Requires Cursor **Teams** or **Enterprise** with admin access.
 
 ## For PMs — install the plugin
 
+### Option A — team marketplace (recommended)
+
 After an admin imports the marketplace:
 
 1. Open **Customize** in Cursor (Agents sidebar).
@@ -25,12 +27,31 @@ After an admin imports the marketplace:
 3. Install the plugin.
 4. Enable MCPs (Slack, Atlassian, etc.) in **Settings → Plugins**, then run `/setup`.
 
-See [`acx-pm/README.md`](acx-pm/README.md) for skill list, MCP requirements, and conventions.
+### Option B — npm (no admin setup)
+
+Published as [`create-acx-pm`](https://www.npmjs.com/package/create-acx-pm) on npm. One-shot install (recommended):
+
+```bash
+npx create-acx-pm
+```
+
+Or install globally and re-run anytime:
+
+```bash
+npm install -g create-acx-pm
+create-acx-pm
+```
+
+Installs skills to `~/.cursor/skills/acx-pm`. Then enable MCPs and run `/setup`.
+
+**Flags:** `--project` (install to `./.cursor/skills/acx-pm`), `--claude` (`~/.claude/skills/acx-pm`), `--force` (overwrite). See [`acx-pm/README.md`](acx-pm/README.md) for details.
 
 ## Repo layout
 
 ```
 .cursor-plugin/marketplace.json   ← team marketplace manifest (import this repo)
+bin/create-acx-pm.js              ← npx installer CLI
+package.json                      ← publish as create-acx-pm on npm
 CHANGELOG.md
 acx-pm/                           ← acx-pm plugin
   .cursor-plugin/plugin.json      ← version lives here
@@ -44,8 +65,9 @@ acx-pm/                           ← acx-pm plugin
 
 On release:
 
-1. Bump `version` in `acx-pm/.cursor-plugin/plugin.json` and `acx-pm/.claude-plugin/plugin.json`
+1. Bump `version` in `acx-pm/.cursor-plugin/plugin.json`, `acx-pm/.claude-plugin/plugin.json`, and root `package.json`
 2. Add a dated section to `CHANGELOG.md`
 3. Push to `main` (auto-refresh picks it up if enabled)
+4. Publish to npm: `npm publish` from repo root (keep `create-acx-pm` version in sync with plugin manifests)
 
 Do **not** add `version`, `category`, or `keywords` to plugin entries in `.cursor-plugin/marketplace.json` — the listing schema rejects them. Category and keywords belong in each plugin's own `plugin.json`.

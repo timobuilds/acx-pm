@@ -11,6 +11,12 @@ When you ship a release, bump `version` in:
 
 Version lives in the per-plugin manifests only — the marketplace listing schema does not accept `version`, `category`, or `keywords` on plugin entries.
 
+## [Unreleased]
+
+### Added
+
+- **`create-acx-pm` npx installer** — `npx create-acx-pm` (or `npx github:timobuilds/acx-pm`) copies skills + `CONVENTIONS.md` to `~/.cursor/skills/acx-pm`; flags for `--project`, `--claude`, `--force`
+
 ## [0.2.1] - 2026-07-03
 
 ### Fixed

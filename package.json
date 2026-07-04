@@ -1,0 +1,26 @@
+{
+  "name": "create-acx-pm",
+  "version": "0.2.1",
+  "description": "Install acx-pm skills for Cursor or Claude Code without the team marketplace",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timobuilds/acx-pm.git"
+  },
+  "bin": {
+    "create-acx-pm": "bin/create-acx-pm.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin/",
+    "acx-pm/CONVENTIONS.md",
+    "acx-pm/skills/",
+    "acx-pm/.cursor-plugin/plugin.json",
+    "acx-pm/.claude-plugin/plugin.json"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}

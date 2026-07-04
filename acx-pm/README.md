@@ -8,7 +8,7 @@ One directory, two manifests:
 
 | Client | Manifest | Install via |
 |---|---|---|
-| **Cursor** (primary) | `.cursor-plugin/plugin.json` | ACX team marketplace (see Installing) |
+| **Cursor** (primary) | `.cursor-plugin/plugin.json` | Team marketplace, or `npx create-acx-pm` |
 | **Claude Code / Cowork** | `.claude-plugin/plugin.json` | Claude plugin install flow |
 
 Skills live in `skills/*/SKILL.md` — a cross-agent format both clients read. No duplicated skill content. On release, bump `version` in both plugin manifests (see root `CHANGELOG.md`). Version does not go in the marketplace listing — only in `acx-pm/.cursor-plugin/plugin.json` and `acx-pm/.claude-plugin/plugin.json`.
@@ -77,6 +77,35 @@ This plugin ships via the **ACX team marketplace**. An admin imports the repo on
 3. Enable MCPs (see Requirements), then run `/setup`
 
 See the [marketplace README](../README.md) for admin setup details.
+
+### Cursor (npm — quick local install)
+
+No marketplace admin required. Package: [`create-acx-pm`](https://www.npmjs.com/package/create-acx-pm) on npm.
+
+**One-shot** (recommended — no global install):
+
+```bash
+npx create-acx-pm
+```
+
+**Global install** (run `create-acx-pm` anytime, e.g. to update with `--force`):
+
+```bash
+npm install -g create-acx-pm
+create-acx-pm
+```
+
+Both install skills to `~/.cursor/skills/acx-pm` so every project picks them up.
+
+**Other targets:**
+
+```bash
+create-acx-pm --project   # ./.cursor/skills/acx-pm in this repo
+create-acx-pm --claude    # ~/.claude/skills/acx-pm
+create-acx-pm --force     # overwrite an existing install
+```
+
+Then enable MCPs (see Requirements) and run `/setup`.
 
 ### Cursor (local/manual)
 
